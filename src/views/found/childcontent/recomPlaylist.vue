@@ -60,6 +60,7 @@ export default {
     font-weight: 700;
     font-size: 20px;
     color: #ccc;
+    cursor: pointer;
   }
   .rp_container {
     display: flex;
@@ -87,7 +88,7 @@ export default {
         // 隐藏文字多余文字用...代替
         text-overflow: ellipsis;
       }
-      p:hover{
+      p:hover {
         color: #fff;
       }
       .item_playCount {
@@ -98,7 +99,7 @@ export default {
         background: rgba(0, 0, 0, 0.1);
         border-radius: 10px;
       }
-      .el-icon-video-play{
+      .el-icon-video-play {
         position: absolute;
         bottom: 60px;
         right: 10px;

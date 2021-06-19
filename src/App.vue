@@ -25,6 +25,9 @@ export default {
     tabBar,
   },
 };
+// document.body.style["overflow-y"] = "hidden";
+// document.body.style.overflowY = "hidden";
+// document.documentElement.style.overflow = "hidden";
 </script>
 
 <style lang="less">

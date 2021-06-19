@@ -22,8 +22,23 @@ export function getSpecial() {
   });
 }
 //推荐新音乐
-export function getNewMusic() {
+export function getNewMusic(limit) {
   return request({
     url: "/personalized/newsong",
+    params: {
+      limit,
+    },
+  });
+}
+// 精品歌单
+export function getGoodsPlayList() {
+  return request({
+    url: "/top/playlist/highquality",
+  });
+}
+// 歌单列表
+export function getPlaylist() {
+  return request({
+    url: "/top/playlist",
   });
 }

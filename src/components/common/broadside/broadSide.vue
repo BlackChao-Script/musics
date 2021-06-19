@@ -10,22 +10,40 @@
           active-text-color="#fff"
         >
           <el-menu-item index="1" @click="foundClick">
-            <span >发现音乐</span>
+            <span>
+              <i class="el-icon-view"></i>
+              发现音乐
+            </span>
           </el-menu-item>
           <el-menu-item index="2" @click="videoClick">
-            <span >视频</span>
+            <span>
+              <i class="el-icon-video-camera-solid"></i>
+              视频
+            </span>
           </el-menu-item>
           <el-menu-item index="3">
-            <span>直播</span>
+            <span>
+              <i class="el-icon-video-camera"></i>
+              直播
+            </span>
           </el-menu-item>
           <el-menu-item index="4">
-            <span>本地音乐</span>
+            <span>
+              <i class="el-icon-headset"></i>
+              本地音乐
+            </span>
           </el-menu-item>
           <el-menu-item index="5">
-            <span>最近播放</span>
+            <span>
+              <i class="el-icon-time"></i>
+              最近播放
+            </span>
           </el-menu-item>
           <el-menu-item index="6">
-            <span>我的收藏</span>
+            <span>
+              <i class="el-icon-s-custom"></i>
+              我的收藏
+            </span>
           </el-menu-item>
         </el-menu>
       </el-col>
@@ -44,7 +62,7 @@ export default {
       this.$router.push("/found");
     },
     videoClick() {
-      this.$router.push("/video");
+      this.$router.push("/videos");
     },
   },
 };
@@ -61,7 +79,10 @@ export default {
   color: #ccc;
   box-shadow: -1px 0 5px rgba(70, 67, 67, 0.5);
 }
-.el-menu{
-  border-right:0!important;
+.el-menu-item{
+  margin-top: 20px;
+}
+.el-menu {
+  border-right: 0 !important;
 }
 </style>

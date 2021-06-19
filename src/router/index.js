@@ -4,6 +4,10 @@ import VueRouter from "vue-router";
 const found = () => import("@/views/found/found");
 const recommended = () => import("@/views/found/recommended/recommended");
 const playlist = () => import("@/views/found/playlist/playlist");
+const videos = () => import("@/views/video/videos");
+const songlistdetail = () => import("@/views/songlistdetail/songlistdetail");
+const musices = () => import("@/views/musics/musices");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -28,6 +32,18 @@ const routes = [
         component: playlist,
       },
     ],
+  },
+  {
+    path: "/videos",
+    component: videos,
+  },
+  {
+    path: "/songlistdetail/:id",
+    component: songlistdetail,
+  },
+  {
+    path: "/musices",
+    component: musices,
   },
 ];
 

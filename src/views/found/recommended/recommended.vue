@@ -6,21 +6,8 @@
     <recom-playlist :contaItem="contaItem"></recom-playlist>
     <!-- 独家放送组件 -->
     <recom-special :special="special"></recom-special>
-    <ul>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-      <li>11</li>
-    </ul>
+    <!-- 推荐新音乐组件 -->
+    <recom-new-music :newMusic="newMusic"></recom-new-music>
   </div>
 </template>
 
@@ -29,9 +16,15 @@
 import recomSlideshow from "../childcontent/recomSlideshow";
 import recomPlaylist from "../childcontent/recomPlaylist";
 import recomSpecial from "../childcontent/recomSpecial";
+import recomNewMusic from "../childcontent/recomNewMusic";
 
 // 请求数据
-import { getfound, getRecomPlaylist, getSpecial } from "@/network/found";
+import {
+  getfound,
+  getRecomPlaylist,
+  getSpecial,
+  getNewMusic,
+} from "@/network/found";
 
 export default {
   name: "recommended",
@@ -40,6 +33,7 @@ export default {
       slideshowLIst: [],
       contaItem: [],
       special: [],
+      newMusic: [],
     };
   },
   // 注册组件
@@ -47,11 +41,13 @@ export default {
     recomSlideshow,
     recomPlaylist,
     recomSpecial,
+    recomNewMusic,
   },
   created() {
     this.getfound();
     this.getRecomPlaylist(10);
     this.getSpecial();
+    this.getNewMusic(12);
   },
   methods: {
     // 获取轮播图数据
@@ -69,8 +65,13 @@ export default {
     // 获取独家放送数据
     getSpecial() {
       getSpecial().then((res) => {
-        console.log(res);
         this.special = res.result;
+      });
+    },
+    // 获取推荐新音乐数据
+    getNewMusic(limit) {
+      getNewMusic(limit).then((res) => {
+        this.newMusic = res.result;
       });
     },
   },
