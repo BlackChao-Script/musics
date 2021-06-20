@@ -61,3 +61,9 @@ export function getradioHot() {
     url: "/dj/hot",
   });
 }
+// 热门歌手
+export function getSinger() {
+  return request({
+    url: "/top/artists?limit=60",
+  });
+}

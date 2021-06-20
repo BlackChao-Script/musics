@@ -5,10 +5,13 @@ const found = () => import("@/views/found/found");
 const recommended = () => import("@/views/found/recommended/recommended");
 const playlist = () => import("@/views/found/playlist/playlist");
 const radio = () => import("@/views/found/radio/radio");
+const singer = () => import("@/views/found/singer/singer");
+const newmusics = () => import("@/views/found/newmusics/newmusics");
 
 const videos = () => import("@/views/video/videos");
 const songlistdetail = () => import("@/views/songlistdetail/songlistdetail");
 const musices = () => import("@/views/musics/musices");
+const singerdetailed = () => import("@/views/singerdetailed/singerdetailed");
 
 Vue.use(VueRouter);
 
@@ -37,6 +40,14 @@ const routes = [
         path: "radio",
         component: radio,
       },
+      {
+        path: "singer",
+        component: singer,
+      },
+      {
+        path: "newmusics",
+        component: newmusics,
+      },
     ],
   },
   {
@@ -50,6 +61,10 @@ const routes = [
   {
     path: "/musices",
     component: musices,
+  },
+  {
+    path: "/singerdetailed/:id",
+    component: singerdetailed,
   },
 ];
 

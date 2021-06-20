@@ -10,10 +10,9 @@
     >
       <el-menu-item index="1" @click="recomClick">个性推荐</el-menu-item>
       <el-menu-item index="2" @click="playlistClick">歌单</el-menu-item>
-      <el-menu-item index="3" @click="radioClick">主播电台</el-menu-item>
-      <el-menu-item index="4">排行榜</el-menu-item>
-      <el-menu-item index="5">歌手</el-menu-item>
-      <el-menu-item index="6">最新音乐</el-menu-item>
+      <el-menu-item index="3" @click="singerClick">歌手</el-menu-item>
+      <el-menu-item index="4" @click="radioClick">主播电台</el-menu-item>
+      <el-menu-item index="5" @click="newmusicsClick">最新音乐</el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -35,6 +34,12 @@ export default {
     },
     radioClick() {
       this.$router.push("/found/radio");
+    },
+    singerClick() {
+      this.$router.push("/found/singer");
+    },
+    newmusicsClick() {
+      this.$router.push("/found/newmusics");
     },
   },
 };

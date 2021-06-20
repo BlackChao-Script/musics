@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="5" class="title">
         <i class="el-icon-help"></i>
-        <span class="titletext">云音乐</span>
+        <span class="titletext" @click="indexClick">云音乐</span>
       </el-col>
       <el-col :span="5" @keyup.enter.native="musesClick">
         <el-input
@@ -107,6 +107,9 @@ export default {
     musesClick() {
       this.$router.push("/musices");
     },
+    indexClick(){
+      this.$router.push("/found")
+    }
   },
 };
 </script>
@@ -128,6 +131,7 @@ export default {
     font-size: 20px;
   }
   .titletext {
+    cursor: pointer;
     margin-left: 5px;
     font-weight: 700;
   }

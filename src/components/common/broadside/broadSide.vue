@@ -29,17 +29,11 @@
           </el-menu-item>
           <el-menu-item index="4">
             <span>
-              <i class="el-icon-headset"></i>
-              本地音乐
-            </span>
-          </el-menu-item>
-          <el-menu-item index="5">
-            <span>
               <i class="el-icon-time"></i>
               最近播放
             </span>
           </el-menu-item>
-          <el-menu-item index="6">
+          <el-menu-item index="5">
             <span>
               <i class="el-icon-s-custom"></i>
               我的收藏
