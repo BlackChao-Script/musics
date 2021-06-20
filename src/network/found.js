@@ -42,3 +42,22 @@ export function getPlaylist() {
     url: "/top/playlist",
   });
 }
+
+// 获取电台轮播图
+export function getradioSlideshow() {
+  return request({
+    url: "/dj/banner",
+  });
+}
+// 电台个性推荐
+export function getradioRecommend() {
+  return request({
+    url: "/dj/personalize/recommend",
+  });
+}
+// 热门电台
+export function getradioHot() {
+  return request({
+    url: "/dj/hot",
+  });
+}

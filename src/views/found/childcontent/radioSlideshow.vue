@@ -1,8 +1,8 @@
 <template>
-  <div class="recomslideshow">
+  <div class="radioSlideshow">
     <el-carousel :interval="4000" type="card" height="300px">
       <el-carousel-item
-        v-for="(item, index) in slideshowLIst"
+        v-for="(item, index) in radioSlideshow"
         :key="index"
         class="picitem"
       >
@@ -18,12 +18,12 @@
 
 <script>
 export default {
-  name: "recomslideshow",
-  props: {
-    slideshowLIst: {
-      type: Array,
-    },
-  },
+  name: "radioSlideshow",
+  props:{
+    radioSlideshow:{
+      type:Array
+    }
+  }
 };
 </script>
 

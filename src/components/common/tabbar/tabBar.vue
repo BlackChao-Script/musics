@@ -28,11 +28,12 @@ export default {
 <style lang="less" scoped>
 .tabbar {
   position: fixed;
-  bottom: 0;
+  bottom: -60px;
   left: 0;
   right: 0;
   z-index: 12;
   height: 71px;
+  transition: all 0.5s;
   background-color: #222225;
   box-shadow: 0 -1px 5px rgba(70, 67, 67, 0.5);
   audio {
@@ -40,5 +41,8 @@ export default {
     margin: 0 25%;
     height: 62px;
   }
+}
+.tabbar:hover {
+  bottom: 0;
 }
 </style>

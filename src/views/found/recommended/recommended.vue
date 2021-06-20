@@ -1,7 +1,7 @@
 <template>
   <div class="recommended">
     <!-- 轮播图组件 -->
-    <recom-slideshow :slideshowLIst="slideshowLIst"></recom-slideshow>
+    <slideshow :slideshowLIst="slideshowLIst"></slideshow>
     <!-- 推荐歌单组件 -->
     <recom-playlist :contaItem="contaItem"></recom-playlist>
     <!-- 独家放送组件 -->
@@ -13,7 +13,7 @@
 
 <script>
 // 引入组件
-import recomSlideshow from "../childcontent/recomSlideshow";
+import slideshow from "../childcontent/slideshow";
 import recomPlaylist from "../childcontent/recomPlaylist";
 import recomSpecial from "../childcontent/recomSpecial";
 import recomNewMusic from "../childcontent/recomNewMusic";
@@ -38,7 +38,7 @@ export default {
   },
   // 注册组件
   components: {
-    recomSlideshow,
+    slideshow,
     recomPlaylist,
     recomSpecial,
     recomNewMusic,

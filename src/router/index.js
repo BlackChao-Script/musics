@@ -4,6 +4,8 @@ import VueRouter from "vue-router";
 const found = () => import("@/views/found/found");
 const recommended = () => import("@/views/found/recommended/recommended");
 const playlist = () => import("@/views/found/playlist/playlist");
+const radio = () => import("@/views/found/radio/radio");
+
 const videos = () => import("@/views/video/videos");
 const songlistdetail = () => import("@/views/songlistdetail/songlistdetail");
 const musices = () => import("@/views/musics/musices");
@@ -30,6 +32,10 @@ const routes = [
       {
         path: "playlist",
         component: playlist,
+      },
+      {
+        path: "radio",
+        component: radio,
       },
     ],
   },

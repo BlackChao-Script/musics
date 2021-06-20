@@ -30,7 +30,7 @@ export default {
     // 根据id请求歌单详情数据
     getSongListDetail(this.id).then((res) => {
       this.songplaylist = res.playlist;
-      this.songIds = res.playlist.trackIds;
+      this.songIds=res.playlist.trackIds;
     });
   },
 };
