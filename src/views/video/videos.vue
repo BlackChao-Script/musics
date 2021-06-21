@@ -5,6 +5,10 @@
     <video-mv-list :newsmvs="newsmvs"></video-mv-list>
     <!-- 推荐MV列表 -->
     <video-recommend :recommendMV="recommendMV"></video-recommend>
+    <!-- 云音乐出品MV -->
+    <video-cloud-make :CloudMake="CloudMake"></video-cloud-make>
+    <!-- MV排行 -->
+    <video-mv-ranking :mvRanking="mvRanking"></video-mv-ranking>
   </div>
 </template>
 
@@ -12,9 +16,16 @@
 // 引入组件
 import videoMvList from "./childcontent/videoMvList";
 import videoRecommend from "./childcontent/videogetRecommend";
+import videoCloudMake from "./childcontent/videoCloudMake";
+import videoMvRanking from "./childcontent/videoMvRanking";
 
 // 引入网络接口
-import { getNewsMV, getRecommend } from "@/network/video";
+import {
+  getNewsMV,
+  getRecommend,
+  getCloudMake,
+  getMVRanking,
+} from "@/network/video";
 
 export default {
   name: "videos",
@@ -22,15 +33,21 @@ export default {
     return {
       newsmvs: [],
       recommendMV: [],
+      CloudMake: [],
+      mvRanking: [],
     };
   },
   components: {
     videoMvList,
     videoRecommend,
+    videoCloudMake,
+    videoMvRanking,
   },
   created() {
     this.getNewsMV();
     this.getRecommend();
+    this.getCloudMake();
+    this.getMVRanking();
   },
   methods: {
     getNewsMV() {
@@ -41,6 +58,16 @@ export default {
     getRecommend() {
       getRecommend().then((res) => {
         this.recommendMV = res.result;
+      });
+    },
+    getCloudMake() {
+      getCloudMake().then((res) => {
+        this.CloudMake = res.data;
+      });
+    },
+    getMVRanking() {
+      getMVRanking().then((res) => {
+        this.mvRanking = res.data;
       });
     },
   },

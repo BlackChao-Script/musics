@@ -8,7 +8,7 @@
       v-for="(item, index) in hotSongs"
       :key="index"
       class="songlists_item"
-      @click="getmusic(item.id)"
+      @click="getmusic(item.id), getgetSongs(item.id)"
     >
       <span class="item_name">{{ item.name }}</span>
     </div>
@@ -17,6 +17,7 @@
 
 <script>
 import { getmusic } from "@/network/getmusic";
+import { getgetSongs } from "@/network/songlistdetail";
 export default {
   name: "singerhot",
   props: {
@@ -24,13 +25,18 @@ export default {
       type: Array,
     },
   },
-  created(){
-    this.getmusic()
+  created() {
+    this.getmusic();
   },
   methods: {
     getmusic(id) {
       getmusic(id).then((res) => {
         this.$store.state.recomNewMusicUrl = res.data[0].url;
+      });
+    },
+    getgetSongs(id) {
+      getgetSongs(id).then((res) => {
+        this.$store.state.musics = res.songs;
       });
     },
   },

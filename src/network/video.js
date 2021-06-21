@@ -12,3 +12,15 @@ export function getRecommend() {
     url: "/personalized/mv",
   });
 }
+// 网易云出品MV
+export function getCloudMake() {
+  return request({
+    url: "/mv/exclusive/rcmd?limit=9",
+  });
+}
+// MV排行
+export function getMVRanking() {
+  return request({
+    url: "/top/mv?limit=10",
+  });
+}

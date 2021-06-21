@@ -12,7 +12,7 @@
       v-for="(item, index) in this.$store.state.musicLIst"
       :key="index"
       class="musices_item"
-      @click="getmusic(item.id)"
+      @click="getmusic(item.id), getgetSongs(item.id)"
     >
       <span class="item_name">{{ item.name }}</span>
       <span class="item_singer">{{ item.artists[0].name }}</span>
@@ -23,18 +23,24 @@
 
 <script>
 import { getmusic } from "@/network/getmusic";
+import { getgetSongs } from "@/network/songlistdetail";
 export default {
   name: "musices",
   data() {
     return {};
   },
-  created(){
-    this.getmusic()
+  created() {
+    this.getmusic();
   },
   methods: {
     getmusic(id) {
       getmusic(id).then((res) => {
         this.$store.state.recomNewMusicUrl = res.data[0].url;
+      });
+    },
+    getgetSongs(id) {
+      getgetSongs(id).then((res) => {
+        this.$store.state.musics = res.songs;
       });
     },
   },

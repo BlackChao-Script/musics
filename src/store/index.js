@@ -4,8 +4,9 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 const state = {
-  recomNewMusicUrl:[],
-  musicLIst:[],
+  recomNewMusicUrl: [],
+  musicLIst: [],
+  musics: "",
 };
 export default new Vuex.Store({
   state,

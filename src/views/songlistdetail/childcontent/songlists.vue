@@ -60,6 +60,7 @@ export default {
     getmusic(id) {
       getmusic(id).then((res) => {
         this.$store.state.recomNewMusicUrl = res.data[0].url;
+        this.$store.state.musics = this.songListIds;
       });
     },
   },
