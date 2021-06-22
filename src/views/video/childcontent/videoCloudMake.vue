@@ -2,7 +2,12 @@
   <div class="videoCloudMake">
     <div class="videoCloudMake_title">云音乐出品MV</div>
     <div class="videoCloudMake_content">
-      <div v-for="(item, index) in CloudMake" :key="index" class="content_item">
+      <div
+        v-for="(item, index) in CloudMake"
+        :key="index"
+        class="content_item"
+        @click="getMvid(item.id)"
+      >
         <div class="item_images">
           <img :src="item.cover" />
         </div>
@@ -19,9 +24,20 @@
 <script>
 export default {
   name: "videoCloudMake",
+  data() {
+    return {
+      mvid: "",
+    };
+  },
   props: {
     CloudMake: {
       typr: Array,
+    },
+  },
+  methods: {
+    getMvid(id) {
+      this.mvid = id;
+      this.$router.push("/videodetailed/" + id);
     },
   },
   filters: {

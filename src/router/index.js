@@ -12,6 +12,7 @@ const videos = () => import("@/views/video/videos");
 const songlistdetail = () => import("@/views/songlistdetail/songlistdetail");
 const musices = () => import("@/views/musics/musices");
 const singerdetailed = () => import("@/views/singerdetailed/singerdetailed");
+const videodetailed = () => import("@/views/videodetailed/videodetailed");
 
 Vue.use(VueRouter);
 
@@ -65,6 +66,10 @@ const routes = [
   {
     path: "/singerdetailed/:id",
     component: singerdetailed,
+  },
+  {
+    path: "/videodetailed/:id",
+    component: videodetailed,
   },
 ];
 
