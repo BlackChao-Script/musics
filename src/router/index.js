@@ -13,6 +13,7 @@ const songlistdetail = () => import("@/views/songlistdetail/songlistdetail");
 const musices = () => import("@/views/musics/musices");
 const singerdetailed = () => import("@/views/singerdetailed/singerdetailed");
 const videodetailed = () => import("@/views/videodetailed/videodetailed");
+const recentplay = () => import("@/views/recentplay/recentplay");
 
 Vue.use(VueRouter);
 
@@ -70,6 +71,10 @@ const routes = [
   {
     path: "/videodetailed/:id",
     component: videodetailed,
+  },
+  {
+    path: "/recentplay",
+    component: recentplay,
   },
 ];
 

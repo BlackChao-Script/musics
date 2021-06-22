@@ -6,6 +6,7 @@
         v-for="(item, index) in recommendMV"
         :key="index"
         class="content_item"
+        @click="getMvid(item.id)"
       >
         <div class="item_images">
           <img :src="item.picUrl" />
@@ -38,6 +39,12 @@ export default {
         : num;
     },
   },
+  methods: {
+    getMvid(id) {
+      this.mvid = id;
+      this.$router.push("/videodetailed/" + id);
+    },
+  },
 };
 </script>
 
@@ -61,7 +68,8 @@ export default {
       margin-bottom: 10px;
       .item_images {
         img {
-          width: 100%;
+          width: 380px;
+          height: 200px;
           border-radius: 10px;
         }
       }

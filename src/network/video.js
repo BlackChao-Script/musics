@@ -19,8 +19,12 @@ export function getCloudMake() {
   });
 }
 // MV排行
-export function getMVRanking() {
+export function getMVRanking(area) {
   return request({
-    url: "/top/mv?limit=10",
+    url: "/top/mv?limit=50",
+    params: {
+      area,
+    },
   });
 }
+

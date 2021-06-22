@@ -6,7 +6,7 @@ Vue.use(Vuex);
 const state = {
   recomNewMusicUrl: [],
   musicLIst: [],
-  musics: "",
+  musics: [],
 };
 export default new Vuex.Store({
   state,

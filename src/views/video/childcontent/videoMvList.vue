@@ -2,7 +2,12 @@
   <div class="videomvlist">
     <div class="videomvlist_title">推荐MV</div>
     <div class="videomvlist_content">
-      <div v-for="(item, index) in newsmvs" :key="index" class="content_item">
+      <div
+        v-for="(item, index) in newsmvs"
+        :key="index"
+        class="content_item"
+        @click="getMvid(item.id)"
+      >
         <div class="item_images">
           <img :src="item.cover" />
         </div>
@@ -32,6 +37,12 @@ export default {
         : num / 1000 >= 1
         ? (num / 1000).toFixed(2) + "k"
         : num;
+    },
+  },
+  methods: {
+    getMvid(id) {
+      this.mvid = id;
+      this.$router.push("/videodetailed/" + id);
     },
   },
 };

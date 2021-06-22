@@ -18,3 +18,12 @@ export function getAddress(id) {
     },
   });
 }
+// 热门评论
+export function getHotComments(id) {
+  return request({
+    url: "/comment/new?type=1&sortType=2&pageSize=50",
+    params: {
+      id,
+    },
+  });
+}

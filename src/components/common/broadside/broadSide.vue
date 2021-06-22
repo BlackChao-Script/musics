@@ -21,22 +21,10 @@
               视频
             </span>
           </el-menu-item>
-          <el-menu-item index="3">
-            <span>
-              <i class="el-icon-video-camera"></i>
-              直播
-            </span>
-          </el-menu-item>
-          <el-menu-item index="4">
+          <el-menu-item index="3" @click="recentplay">
             <span>
               <i class="el-icon-time"></i>
               最近播放
-            </span>
-          </el-menu-item>
-          <el-menu-item index="5">
-            <span>
-              <i class="el-icon-s-custom"></i>
-              我的收藏
             </span>
           </el-menu-item>
         </el-menu>
@@ -58,6 +46,9 @@ export default {
     videoClick() {
       this.$router.push("/videos");
     },
+    recentplay() {
+      this.$router.push("/recentplay");
+    },
   },
 };
 </script>
@@ -73,7 +64,7 @@ export default {
   color: #ccc;
   box-shadow: -1px 0 5px rgba(70, 67, 67, 0.5);
 }
-.el-menu-item{
+.el-menu-item {
   margin-top: 20px;
 }
 .el-menu {

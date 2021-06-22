@@ -40,16 +40,20 @@ export default {
     this.getradioHot();
   },
   methods: {
+    // 获取电台轮播图
     getradioSlideshow() {
       getradioSlideshow().then((res) => {
         this.radioSlideshow = res.data;
       });
     },
+    // 电台个性推荐
     getradioRecommend() {
       getradioRecommend().then((res) => {
+        console.log(res);
         this.radioRecommends = res.data;
       });
     },
+    // 热门电台
     getradioHot() {
       getradioHot().then((res) => {
         this.radioHot = res.djRadios;

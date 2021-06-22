@@ -66,12 +66,14 @@ export default {
       font-weight: 700;
     }
     .content_writer {
+      height: 100px;
       margin-top: 20px;
       font-size: 15px;
       color: #ccc;
       overflow: hidden;
       // 隐藏文字多余文字用...代替
       text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 }

@@ -1,8 +1,15 @@
 <template>
   <div class="videoMvRanking">
-    <div class="videoMvRanking_title">MV排行</div>
+    <div class="videoMvRanking_title">
+      <span class="title_name">MV排行</span>
+    </div>
     <div class="videoMvRanking_content">
-      <div v-for="(item, index) in mvRanking" :key="index" class="content_item">
+      <div
+        v-for="(item, index) in mvRanking"
+        :key="index"
+        class="content_item"
+        @click="getMvid(item.id)"
+      >
         <div class="content_number">{{ index + 1 }}</div>
         <div class="content_images">
           <img :src="item.cover" />
@@ -19,9 +26,27 @@
 <script>
 export default {
   name: "videoMvRanking",
+  data() {
+    return {
+      isShow: 0,
+    };
+  },
   props: {
     mvRanking: {
       type: Array,
+    },
+    currentType: {
+      type: String,
+    },
+  },
+  methods: {
+    getMvid(id) {
+      this.mvid = id;
+      this.$router.push("/videodetailed/" + id);
+    },
+    classifyClick(index) {
+      this.isShow = idnex;
+      console.log(this.isShow);
     },
   },
 };
@@ -33,6 +58,7 @@ export default {
   .videoMvRanking_title {
     color: #ccc;
     font-size: 20px;
+    margin-bottom: 20px;
   }
   .videoMvRanking_content {
     display: flex;
@@ -54,7 +80,7 @@ export default {
           rgba(0, 0, 0, 0.25) 200%
         );
       background-blend-mode: multiply;
-      border-radius:10px;
+      border-radius: 10px;
       display: flex;
       .content_number {
         flex: 10%;
@@ -83,6 +109,9 @@ export default {
         }
       }
     }
+  }
+  .isred {
+    color: #a11c1c;
   }
 }
 </style>

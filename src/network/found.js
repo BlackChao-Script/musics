@@ -33,7 +33,7 @@ export function getNewMusic(limit) {
 // 精品歌单
 export function getGoodsPlayList() {
   return request({
-    url: "/top/playlist/highquality",
+    url: "/top/playlist/highquality?item=40",
   });
 }
 // 歌单列表

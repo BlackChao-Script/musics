@@ -8,7 +8,7 @@
     <!-- 云音乐出品MV -->
     <video-cloud-make :CloudMake="CloudMake"></video-cloud-make>
     <!-- MV排行 -->
-    <video-mv-ranking :mvRanking="mvRanking"></video-mv-ranking>
+    <video-mv-ranking :mvRanking="mvRanking" :currentType="currentType"></video-mv-ranking>
   </div>
 </template>
 
@@ -35,6 +35,7 @@ export default {
       recommendMV: [],
       CloudMake: [],
       mvRanking: [],
+      currentType: "欧美",
     };
   },
   components: {
@@ -65,8 +66,9 @@ export default {
         this.CloudMake = res.data;
       });
     },
-    getMVRanking() {
-      getMVRanking().then((res) => {
+    getMVRanking(area) {
+      const areas = this.currentType;
+      getMVRanking(areas).then((res) => {
         this.mvRanking = res.data;
       });
     },
