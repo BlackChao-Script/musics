@@ -1,8 +1,8 @@
 <template>
   <div class="found">
     <found-bar></found-bar>
-    <keep-alive>
-      <router-view></router-view>
+    <keep-alive >
+      <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
   </div>
 </template>

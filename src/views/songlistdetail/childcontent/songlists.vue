@@ -54,6 +54,12 @@ export default {
       const ids2 = ids1.join(",");
       getgetSongs(ids2).then((res) => {
         this.songListIds = res.songs;
+        const recentPlay = {};
+        recentPlay.name = res.songs[0].name;
+        recentPlay.id = res.songs[0].id;
+        recentPlay.namea = res.songs[0].ar[0].name;
+        recentPlay.nameb = res.songs[0].al.name;
+        this.$store.dispatch("addRecentPlay", recentPlay);
       });
     },
     // 自定义方法

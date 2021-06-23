@@ -25,6 +25,9 @@ const routes = [
   {
     path: "/found",
     component: found,
+    meta: {
+      keepAlive: true, // 需要缓存
+    },
     children: [
       {
         path: "",
@@ -33,48 +36,81 @@ const routes = [
       {
         path: "recom",
         component: recommended,
+        meta: {
+          keepAlive: true, // 需要缓存
+        },
       },
       {
         path: "playlist",
         component: playlist,
+        meta: {
+          keepAlive: true, // 需要缓存
+        },
       },
       {
         path: "radio",
         component: radio,
+        meta: {
+          keepAlive: true, // 需要缓存
+        },
       },
       {
         path: "singer",
         component: singer,
+        meta: {
+          keepAlive: true, // 需要缓存
+        },
       },
       {
         path: "newmusics",
         component: newmusics,
+        meta: {
+          keepAlive: true, // 需要缓存
+        },
       },
     ],
   },
   {
     path: "/videos",
     component: videos,
+    meta: {
+      keepAlive: true, // 需要缓存
+    },
   },
   {
     path: "/songlistdetail/:id",
     component: songlistdetail,
+    meta: {
+      keepAlive: false, // 不需要缓存
+    },
   },
   {
     path: "/musices",
     component: musices,
+    meta: {
+      keepAlive: true, // 需要缓存
+    },
   },
   {
     path: "/singerdetailed/:id",
     component: singerdetailed,
+    meta: {
+      keepAlive: false, // 不需要缓存
+    },
   },
   {
     path: "/videodetailed/:id",
     component: videodetailed,
+    meta: {
+      keepAlive: false, // 不需要缓存
+    },
   },
   {
     path: "/recentplay",
     component: recentplay,
+    meta: {
+      keepAlive: true, // 需要缓存
+    },
   },
 ];
 
