@@ -40,13 +40,13 @@ export default {
     },
   },
   methods: {
+    // 携带id页面跳转
     getMvid(id) {
       this.mvid = id;
       this.$router.push("/videodetailed/" + id);
     },
     classifyClick(index) {
       this.isShow = idnex;
-      console.log(this.isShow);
     },
   },
 };

@@ -38,12 +38,14 @@ export default {
       currentType: "欧美",
     };
   },
+  // 注册组件
   components: {
     videoMvList,
     videoRecommend,
     videoCloudMake,
     videoMvRanking,
   },
+  // 调用网络请求函数
   created() {
     this.getNewsMV();
     this.getRecommend();
@@ -51,21 +53,25 @@ export default {
     this.getMVRanking();
   },
   methods: {
+    // 获取最新MV
     getNewsMV() {
       getNewsMV().then((res) => {
         this.newsmvs = res.data;
       });
     },
+    // 获取推荐MV
     getRecommend() {
       getRecommend().then((res) => {
         this.recommendMV = res.result;
       });
     },
+    // 获取网易云出品MV
     getCloudMake() {
       getCloudMake().then((res) => {
         this.CloudMake = res.data;
       });
     },
+    // 获取MV排行
     getMVRanking(area) {
       const areas = this.currentType;
       getMVRanking(areas).then((res) => {

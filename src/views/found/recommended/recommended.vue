@@ -43,6 +43,7 @@ export default {
     recomSpecial,
     recomNewMusic,
   },
+  // 调用网络请求函数
   created() {
     this.getfound();
     this.getRecomPlaylist(10);

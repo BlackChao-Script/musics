@@ -19,6 +19,7 @@ export default {
     },
   },
   methods:{
+    // 携带id跳转页面
     getidsClick(id){
       this.$router.push("/singerdetailed/" +id)
     }

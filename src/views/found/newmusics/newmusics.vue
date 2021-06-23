@@ -7,8 +7,9 @@
 </template>
 
 <script>
+// 引入组件
 import newmusicList from "../childcontent/newmusicList";
-
+// 引入网络请求
 import { getNewMusic } from "@/network/found";
 
 export default {
@@ -18,13 +19,16 @@ export default {
       NewMusic: [],
     };
   },
+  // 注册组件
   components: {
     newmusicList,
   },
+  // 调用网络请求函数
   created() {
     this.getNewMusic(100);
   },
   methods: {
+    // 获取最新音乐
     getNewMusic(limit) {
       getNewMusic(limit).then((res) => {
         this.NewMusic = res.result;

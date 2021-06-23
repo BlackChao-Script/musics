@@ -30,6 +30,7 @@ export default {
       type: Array,
     },
   },
+  // 过滤播放次数
   filters: {
     numfix(num) {
       return num / 10000 >= 1
@@ -40,6 +41,7 @@ export default {
     },
   },
   methods: {
+    // 携带id跳转页面
     getMvid(id) {
       this.mvid = id;
       this.$router.push("/videodetailed/" + id);

@@ -14,9 +14,11 @@
 </template>
 
 <script>
+// 引入组件
 import videomv from "./childcontent/videomv";
 import videoTitle from "./childcontent/videoTitle";
 import videoComments from "./childcontent/videoComments";
+// 引入网络数据
 import { getMv, getHotComments } from "@/network/getmv";
 
 export default {
@@ -27,11 +29,13 @@ export default {
       comments: [],
     };
   },
+  // 注册组件
   components: {
     videomv,
     videoTitle,
     videoComments,
   },
+  // 调用网络请求函数
   created() {
     this.id = this.$route.params.id;
     // 获取MV详细

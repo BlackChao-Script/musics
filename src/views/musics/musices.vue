@@ -22,6 +22,7 @@
 </template>
 
 <script>
+// 引入网络请求
 import { getmusic } from "@/network/getmusic";
 import { getgetSongs } from "@/network/songlistdetail";
 export default {
@@ -29,15 +30,18 @@ export default {
   data() {
     return {};
   },
+  // 调用网络请求函数
   created() {
     this.getmusic();
   },
   methods: {
+    // 获取音乐播放地址
     getmusic(id) {
       getmusic(id).then((res) => {
         this.$store.state.recomNewMusicUrl = res.data[0].url;
       });
     },
+    // 获取音乐详细
     getgetSongs(id) {
       getgetSongs(id).then((res) => {
         this.$store.state.musics = res.songs;

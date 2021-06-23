@@ -7,6 +7,7 @@
 </template>
 
 <script>
+// 引入组件
 import recentplayList from "./childcontent/recentplayList";
 export default {
   name: "recentplay",
@@ -15,6 +16,7 @@ export default {
       musics: [],
     };
   },
+  // 注册组件
   components: {
     recentplayList,
   },

@@ -8,9 +8,10 @@
 </template>
 
 <script>
+// 引入组件
 import playlistGoods from "../childcontent/playlistGoods";
 import playlists from "../childcontent/playlists";
-
+// 引入网络请求
 import { getPlaylist } from "@/network/found";
 export default {
   name: "playlist",
@@ -19,14 +20,17 @@ export default {
       playlists: [],
     };
   },
+  // 注册组件
   components: {
     playlistGoods,
     playlists,
   },
+  // 调用网络请求函数
   created() {
     this.getPlaylist();
   },
   methods: {
+    // 获取歌单
     getPlaylist() {
       getPlaylist().then((res) => {
         this.playlists = res.playlists;

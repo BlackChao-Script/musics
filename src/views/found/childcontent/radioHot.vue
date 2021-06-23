@@ -25,6 +25,7 @@ export default {
       typr: Array,
     },
   },
+  // 过滤播放次数
   filters: {
     numfix(num) {
       return num / 10000 >= 1

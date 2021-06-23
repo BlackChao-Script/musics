@@ -51,6 +51,7 @@ export default {
     },
   },
   filters: {
+    // 过滤播放次数
     numfix(num) {
       return num / 10000 >= 1
         ? (num / 10000).toFixed(2) + "w"

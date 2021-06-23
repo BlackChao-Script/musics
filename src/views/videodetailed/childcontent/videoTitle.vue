@@ -24,6 +24,7 @@ export default {
       type: Array,
     },
   },
+  // 过滤播放次数
   filters: {
     numfix(num) {
       return num / 10000 >= 1 ? (num / 10000).toFixed(2) + "万次" : num;

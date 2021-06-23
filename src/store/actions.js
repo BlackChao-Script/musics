@@ -1,6 +1,6 @@
 export default {
   addRecentPlay(context, payload) {
-    //1.查找之前数组中是否有该商品
+    //1.查找之前数组中是否有该音乐
     let oldProduct = context.state.musicRecentPlay.find(
       (item) => item.id === payload.id
     );

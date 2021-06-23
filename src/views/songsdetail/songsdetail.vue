@@ -30,6 +30,7 @@ export default {
       comments: [],
     };
   },
+  // 注册组件
   components: {
     songDisc,
     songDetails,

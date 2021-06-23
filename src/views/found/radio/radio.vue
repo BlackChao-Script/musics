@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// 引入组件
 import radioSlideshow from "../childcontent/radioSlideshow";
 import radioRecommend from "../childcontent/radioRecommend";
 import radioHot from "../childcontent/radioHot";
@@ -29,11 +30,13 @@ export default {
       radioHot: [],
     };
   },
+  // 注册组件
   components: {
     radioSlideshow,
     radioRecommend,
     radioHot,
   },
+  // 调用网络请求函数
   created() {
     this.getradioSlideshow();
     this.getradioRecommend();
@@ -46,14 +49,14 @@ export default {
         this.radioSlideshow = res.data;
       });
     },
-    // 电台个性推荐
+    // 获取电台个性推荐
     getradioRecommend() {
       getradioRecommend().then((res) => {
         console.log(res);
         this.radioRecommends = res.data;
       });
     },
-    // 热门电台
+    // 获取热门电台
     getradioHot() {
       getradioHot().then((res) => {
         this.radioHot = res.djRadios;

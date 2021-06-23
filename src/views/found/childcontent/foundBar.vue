@@ -26,6 +26,7 @@ export default {
     };
   },
   methods: {
+    // 各页面跳转
     recomClick() {
       this.$router.push("/found/recom");
     },

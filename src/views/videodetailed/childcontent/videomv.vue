@@ -7,6 +7,7 @@
 </template>
 
 <script>
+// 引入网络数据
 import { getAddress } from "@/network/getmv";
 export default {
   name: "videomv",
@@ -15,6 +16,7 @@ export default {
       mvurl: "",
     };
   },
+  // 调用网络请求函数
   created() {
     this.id = this.$route.params.id;
     getAddress(this.id).then((res) => {

@@ -8,9 +8,10 @@
 </template>
 
 <script>
+// 引入组件
 import songdetail from "./childcontent/songdetail";
 import songlists from "./childcontent/songlists";
-
+// 引入网络请求
 import { getSongListDetail } from "@/network/songlistdetail";
 export default {
   name: "songlistdetail",
@@ -20,6 +21,7 @@ export default {
       songIds: [],
     };
   },
+  // 注册组件
   components: {
     songdetail,
     songlists,
