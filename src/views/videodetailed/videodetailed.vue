@@ -38,9 +38,8 @@ export default {
     getMv(this.id).then((res) => {
       this.mvs = res.data;
     });
-    getHotComments(this.id).then((res) => {
+    getHotComments(this.id, 1).then((res) => {
       this.comments = res.data.comments;
-      console.log(this.comments);
     });
   },
 };

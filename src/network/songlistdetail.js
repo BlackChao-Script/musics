@@ -9,7 +9,7 @@ export function getSongListDetail(id) {
     },
   });
 }
-// 获取歌单音乐
+// 获取音乐详细
 export function getgetSongs(ids) {
   return request({
     url: "/song/detail",

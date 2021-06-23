@@ -65,8 +65,13 @@ export default {
       }
       .abstract_content{
         color: #ccc;
-        margin-top: 15px;
-        font-size: 15px;
+        overflow: hidden;
+        // 隐藏文字多余文字用...代替
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 210px;
+        margin-top: 10px;
+        font-size: 13px;
       }
     }
   }

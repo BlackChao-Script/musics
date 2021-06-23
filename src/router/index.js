@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
+// 路由懒加载
 const found = () => import("@/views/found/found");
+// found子路由
 const recommended = () => import("@/views/found/recommended/recommended");
 const playlist = () => import("@/views/found/playlist/playlist");
 const radio = () => import("@/views/found/radio/radio");
@@ -14,6 +15,7 @@ const musices = () => import("@/views/musics/musices");
 const singerdetailed = () => import("@/views/singerdetailed/singerdetailed");
 const videodetailed = () => import("@/views/videodetailed/videodetailed");
 const recentplay = () => import("@/views/recentplay/recentplay");
+const songsdetail = () => import("@/views/songsdetail/songsdetail");
 
 Vue.use(VueRouter);
 
@@ -110,6 +112,13 @@ const routes = [
     component: recentplay,
     meta: {
       keepAlive: true, // 需要缓存
+    },
+  },
+  {
+    path: "/songsdetail/:id",
+    component: songsdetail,
+    meta: {
+      keepAlive: false, // 不需要缓存
     },
   },
 ];

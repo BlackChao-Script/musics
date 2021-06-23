@@ -48,7 +48,7 @@ export default {
 <style lang="less" scoped>
 .foundbar {
   position: fixed;
-  top: 61px;
+  top: 60px;
   left: 0;
   right: 0;
   z-index: 10;

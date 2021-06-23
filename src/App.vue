@@ -6,6 +6,7 @@
     <broad-side></broad-side>
     <!-- 底部模块 -->
     <tab-bar></tab-bar>
+    <!-- 路由 -->
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
@@ -28,9 +29,6 @@ export default {
     tabBar,
   },
 };
-// document.body.style["overflow-y"] = "hidden";
-// document.body.style.overflowY = "hidden";
-// document.documentElement.style.overflow = "hidden";
 </script>
 
 <style lang="less">

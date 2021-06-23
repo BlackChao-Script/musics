@@ -124,7 +124,7 @@ export default {
   height: 60px;
   background-color: #222225;
   line-height: 60px;
-  border-bottom: 2px solid #a11c1c;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
   .title {
     margin-left: 25px;
     color: #fff;

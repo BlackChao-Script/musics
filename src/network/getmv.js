@@ -19,11 +19,12 @@ export function getAddress(id) {
   });
 }
 // 热门评论
-export function getHotComments(id) {
+export function getHotComments(id, type) {
   return request({
-    url: "/comment/new?type=1&sortType=2&pageSize=50",
+    url: "/comment/new?sortType=2&pageSize=50",
     params: {
       id,
+      type,
     },
   });
 }

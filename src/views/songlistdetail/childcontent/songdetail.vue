@@ -66,7 +66,7 @@ export default {
 .songdetail {
   width: 100%;
   display: flex;
-  border: 1px solid rgba(0, 0, 0, .5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   .songdetail_images {
     flex: 25%;
@@ -152,7 +152,7 @@ export default {
       }
       .abstract_content {
         margin-left: 5px;
-        font-size: 13px;
+        font-size: 12px;
         color: #ccc;
       }
     }
