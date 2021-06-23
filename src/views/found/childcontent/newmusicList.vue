@@ -35,6 +35,12 @@ export default {
     getgetSongs(id) {
       getgetSongs(id).then((res) => {
         this.$store.state.musics = res.songs;
+        const recentPlay = {};
+        recentPlay.name = res.songs[0].name;
+        recentPlay.id = res.songs[0].id;
+        recentPlay.namea = res.songs[0].ar[0].name;
+        recentPlay.nameb = res.songs[0].al.name;
+        this.$store.dispatch("addRecentPlay", recentPlay);
       });
     },
   },

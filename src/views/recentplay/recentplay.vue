@@ -1,10 +1,13 @@
 <template>
   <div class="recentplay">
     <div class="recentplay_title">最近播放</div>
+    <!-- 播放记录列表 -->
+    <recentplay-list></recentplay-list>
   </div>
 </template>
 
 <script>
+import recentplayList from "./childcontent/recentplayList";
 export default {
   name: "recentplay",
   data() {
@@ -12,8 +15,10 @@ export default {
       musics: [],
     };
   },
-  created() {
+  components: {
+    recentplayList,
   },
+  created() {},
 };
 </script>
 
