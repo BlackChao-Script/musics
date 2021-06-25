@@ -42,6 +42,6 @@ export default {
 .songlistdetail {
   margin-top: 100px;
   width: 90%;
-  margin-left: 20px;
+  margin-left: 60px;
 }
 </style>

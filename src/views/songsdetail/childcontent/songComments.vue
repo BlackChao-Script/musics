@@ -38,7 +38,7 @@ export default {
   .songComments_content {
     .content_item {
       display: flex;
-      border-bottom: 1px solid #ccc;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
       .item_images {
         padding-top: 10px;
         width: 100px;

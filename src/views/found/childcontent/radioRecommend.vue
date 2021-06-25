@@ -6,6 +6,7 @@
         v-for="(item, index) in radioRecommends"
         :key="index"
         class="content_item"
+        @click="radiodetailClick(item.id)"
       >
         <div class="item_images">
           <img :src="item.picUrl" />
@@ -25,6 +26,12 @@ export default {
       type: Array,
     },
   },
+  methods: {
+    // 携带id跳转页面
+    radiodetailClick(id) {
+      this.$router.push("/radiodetail/" + id);
+    },
+  },
 };
 </script>
 
@@ -41,6 +48,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     .content_item {
+      cursor: pointer;
       position: relative;
       width: 250px;
       height: 310px;
@@ -70,6 +78,9 @@ export default {
         border-radius: 10px;
         color: #fff;
       }
+    }
+    .content_item :hover{
+      color: #fff;
     }
   }
 }

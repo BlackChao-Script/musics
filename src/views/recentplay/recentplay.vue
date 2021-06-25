@@ -28,7 +28,7 @@ export default {
 .recentplay {
   margin-top: 100px;
   width: 1550px;
-  margin-left: 100px;
+  margin-left: 150px;
   margin-bottom: 100px;
   .recentplay_title {
     color: #fff;

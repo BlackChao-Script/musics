@@ -16,6 +16,7 @@ const singerdetailed = () => import("@/views/singerdetailed/singerdetailed");
 const videodetailed = () => import("@/views/videodetailed/videodetailed");
 const recentplay = () => import("@/views/recentplay/recentplay");
 const songsdetail = () => import("@/views/songsdetail/songsdetail");
+const radiodetail = () => import("@/views/radiodetail/radiodetail");
 
 Vue.use(VueRouter);
 
@@ -117,6 +118,13 @@ const routes = [
   {
     path: "/songsdetail/:id",
     component: songsdetail,
+    meta: {
+      keepAlive: false, // 不需要缓存
+    },
+  },
+  {
+    path: "/radiodetail/:id",
+    component: radiodetail,
     meta: {
       keepAlive: false, // 不需要缓存
     },

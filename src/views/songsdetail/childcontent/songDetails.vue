@@ -47,9 +47,9 @@ export default {
     },
   },
   watch: {
-    "$store.state.currenIndex": function(n, o) {
+    "$store.state.currenIndex": function(n) {
       this.currenIndex = n;
-      this.$refs.lyrics.style.top = -n * 25 + "px";
+      this.$refs.lyrics.style.top = -n * 45 + "px";
     },
   },
 };
@@ -81,15 +81,16 @@ export default {
     margin-top: 10px;
     height: 88%;
     .content_details {
-      margin-top: 150px;
+      margin-top: 25%;
       position: absolute;
       top: 0;
       margin-left: 10%;
       text-align: center;
+      transition: all 0.5s;
       width: 80%;
-      // background-color:skyblue;
       .details_item {
-        line-height: 30px;
+        margin-top: 10px;
+        height: 35px;
         color: #ccc;
       }
     }

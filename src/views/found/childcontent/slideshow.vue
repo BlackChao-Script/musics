@@ -30,7 +30,8 @@ export default {
 <style lang="less" scoped>
 .recomslideshow {
   width: 1550px;
-  margin: 150px auto;
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
 .el-carousel__item h3 {
   color: #475669;

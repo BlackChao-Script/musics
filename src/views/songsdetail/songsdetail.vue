@@ -72,7 +72,7 @@ export default {
         });
       }
       this.lyric.sort(this.sortRule); //由于不同时间的相同歌词我们给排到一起了，所以这里要以时间顺序重新排列一下
-      this.$store.state.lyricArr = this.lyric;
+      this.$store.state.lyricArr = this.lyric; //把初始化完成的lyric保存到lyricArr里面
     },
 
     sortRule(a, b) {
@@ -89,9 +89,9 @@ export default {
   .songsdetail_top {
     display: flex;
     width: 1550px;
-    margin-left: 100px;
+    margin-left: 150px;
     height: 600px;
-    box-shadow: 0 10px 10px rgba(100, 100, 100, .1);
+    box-shadow: 0 10px 10px rgba(100, 100, 100, 0.1);
   }
 }
 </style>

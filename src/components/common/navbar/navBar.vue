@@ -16,11 +16,11 @@
       </el-col>
       <el-col :span="12">
         <span class="icon">
-          <el-avatar :size="30">
-            <i class="el-icon-user-solid" @error="errorHandler"></i>
+          <el-avatar :size="40" :src="avatarUrl">
+            <i class="el-icon-user-solid"></i>
           </el-avatar>
         </span>
-        <div class="login">
+        <div class="login" v-if="isshow">
           <el-popover placement="bottom" width="500" trigger="click">
             <el-form
               :model="login"
@@ -44,20 +44,38 @@
             <el-button slot="reference">登录</el-button>
           </el-popover>
         </div>
+
+        <div class="login" else>
+          <el-popover placement="bottom" width="20" trigger="click">
+            <div>昵称：{{ nickname }}</div>
+            <div>我的等级：LV.{{ level }}</div>
+            <el-button slot="reference">我的信息</el-button>
+          </el-popover>
+        </div>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
+// 引入网络接口
 import { getSearch } from "@/network/navBarAPI/search";
-import { logins } from "@/network/login";
+import {
+  logins,
+  getAccount,
+  getUsresLevel,
+  getUserPlayList,
+} from "@/network/login";
 
 export default {
   name: "navBar",
   data() {
     return {
       search: "",
+      isshow: true,
+      nickname: "",
+      avatarUrl: "",
+      level: 0,
       login: {
         phoneNumbar: "",
         password: "",
@@ -72,29 +90,58 @@ export default {
   },
   created() {
     this.getSearch();
-    this.logins();
   },
   methods: {
+    // 网络请求函数方法
     getSearch() {
       const keywords = this.search;
       getSearch(keywords).then((res) => {
         this.$store.state.musicLIst = res.result.songs;
-        console.log(this.$store.state.musicLIst);
       });
     },
+    // 登录
     logins() {
       const phones = this.login.phoneNumbar;
       const passwords = this.login.password;
-      logins(phones, passwords).then((res) => {});
+      // 获取手机登录
+      logins(phones, passwords).then((res) => {
+        // 保存用户Id
+        this.$store.state.usersId = res.bindings[0].userId;
+        this.getUserPlayList(this.$store.state.usersId);
+      });
     },
-
+    // 账号信息
+    getAccount() {
+      getAccount().then((res) => {
+        this.nickname = res.profile.nickname;
+        this.avatarUrl = res.profile.avatarUrl;
+      });
+    },
+    // 用户等级
+    getUsresLevel() {
+      getUsresLevel().then((res) => {
+        this.level = res.data.level;
+      });
+    },
+    // 用户歌单
+    getUserPlayList(uid) {
+      setTimeout(() => {
+        getUserPlayList(uid).then((res) => {
+          this.$store.state.userplaylist = res.playlist;
+        });
+      }, 500);
+    },
     errorHandler() {
       return false;
     },
+    // 登录完成时执行函数
     onLogin(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert("submit!");
+          this.logins();
+          this.getAccount();
+          this.isshow = false;
+          this.getUsresLevel();
         } else {
           return false;
         }
@@ -107,9 +154,12 @@ export default {
     musesClick() {
       this.$router.push("/musices");
     },
-    indexClick(){
-      this.$router.push("/found")
-    }
+    indexClick() {
+      this.$router.push("/found");
+    },
+    handleCommand(command) {
+      this.$message("click on item " + command);
+    },
   },
 };
 </script>
@@ -124,7 +174,7 @@ export default {
   height: 60px;
   background-color: #222225;
   line-height: 60px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   .title {
     margin-left: 25px;
     color: #fff;
@@ -153,14 +203,16 @@ export default {
   }
   .icon {
     position: absolute;
+    width: 100px;
     right: 0;
     top: 10px;
-    left: 1559px;
+    left: 1590px;
   }
   .el-dropdown-link2 {
     cursor: pointer;
   }
   .login {
+    cursor: pointer;
     margin-left: 660px;
     z-index: 100;
   }

@@ -28,7 +28,7 @@ export default {
     position: relative;
     width: 500px;
     height: 500px;
-    box-shadow: 0 0 50px #343434;
+    box-shadow: 0 0 100px #020202;
     background: linear-gradient(
         to bottom,
         #323232 0%,
@@ -77,6 +77,6 @@ export default {
 }
 
 .playing {
-  animation: move 80s linear infinite alternate;
+  animation: move 100s linear infinite alternate;
 }
 </style>

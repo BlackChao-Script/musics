@@ -14,6 +14,8 @@ const state = {
   lyricArr: [],
   currenIndex: 0,
   playing: false,
+  usersId: 0,
+  userplaylist: [],
 };
 export default new Vuex.Store({
   state,

@@ -66,9 +66,11 @@ export default {
   .recentplayList_item {
     position: relative;
     height: 50px;
+    margin-bottom: 10px;
     cursor: pointer;
     line-height: 50px;
     color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     background: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     .item_name {

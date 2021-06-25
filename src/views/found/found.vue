@@ -22,6 +22,7 @@ export default {
 
 <style lang="less" scoped>
 .found {
-  width: 1700px;
+  width: 1550px;
+  margin: 0 150px;
 }
 </style>

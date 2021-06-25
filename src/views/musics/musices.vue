@@ -1,7 +1,7 @@
 <template>
   <div class="musices">
     <div class="musices_title">
-      <div class="title_ts"><i class="el-icon-view"></i>找到歌曲</div>
+      <div class="title_ts"><i class="el-icon-view"></i>  找到歌曲</div>
     </div>
     <div class="musices_classify">
       <span class="classify_name">音乐标题</span>
@@ -74,6 +74,9 @@ export default {
       border-radius: 10px;
       text-align: center;
       margin-left: 200px;
+    }
+    .el-icon-view{
+      margin-left: 5px;
     }
   }
   .musices_classify {

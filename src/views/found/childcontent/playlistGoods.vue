@@ -32,6 +32,7 @@ export default {
   display: flex;
   height: 300px;
   border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
   background-image: linear-gradient(to right, #434343 0%, black 100%);
   .images {
     text-align: center;

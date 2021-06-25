@@ -52,7 +52,7 @@ export default {
 <style lang="less" scoped>
 .videodetailed {
   margin-top: 100px;
-  margin-left: 100px;
+  margin-left: 150px;
   margin-bottom: 50px;
   width: 1550px;
   .videodetailed_title {

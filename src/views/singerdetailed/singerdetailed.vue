@@ -42,7 +42,7 @@ export default {
 <style lang="less" scoped>
 .singerdetailed {
   margin-top: 100px;
-  margin-left: 100px;
+  margin-left: 150px;
   width: 1550px;
 }
 </style>

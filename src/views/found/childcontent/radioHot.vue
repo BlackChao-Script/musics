@@ -2,7 +2,12 @@
   <div class="radioHot">
     <div class="radioHot_title">热门电台</div>
     <div class="radioHot_content">
-      <div v-for="(item, index) in radioHot" :key="index" class="content_item">
+      <div
+        v-for="(item, index) in radioHot"
+        :key="index"
+        class="content_item"
+        @click="radiodetailClick(item.id)"
+      >
         <div class="item_images">
           <img :src="item.picUrl" />
         </div>
@@ -23,6 +28,12 @@ export default {
   props: {
     radioHot: {
       typr: Array,
+    },
+  },
+  methods: {
+    // 携带id跳转页面
+    radiodetailClick(id) {
+      this.$router.push("/radiodetail/" + id);
     },
   },
   // 过滤播放次数
@@ -53,6 +64,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     .content_item {
+      cursor: pointer;
       position: relative;
       margin-top: 10px;
       width: 300px;
@@ -96,6 +108,9 @@ export default {
         background: rgba(0, 0, 0, 0.1);
         border-radius: 10px;
       }
+    }
+    .content_item :hover{
+      color: #fff;
     }
   }
 }
