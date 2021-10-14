@@ -22,12 +22,7 @@
         </span>
         <div class="login" v-if="isshow">
           <el-popover placement="bottom" width="500" trigger="click">
-            <el-form
-              :model="login"
-              label-width="100px"
-              :rules="rules"
-              ref="login"
-            >
+            <el-form :model="login" label-width="100px" :rules="rules" ref="login">
               <el-form-item label="手机号码" prop="phoneNumbar">
                 <el-input v-model="login.phoneNumbar"></el-input>
               </el-form-item>
@@ -35,9 +30,7 @@
                 <el-input v-model="login.password"></el-input>
               </el-form-item>
               <el-form-item>
-                <el-button type="primary" @click="onLogin('login')"
-                  >登录</el-button
-                >
+                <el-button type="primary" @click="onLogin('login')">登录</el-button>
                 <el-button @click="resetForm('login')">重置</el-button>
               </el-form-item>
             </el-form>
@@ -45,7 +38,7 @@
           </el-popover>
         </div>
 
-        <div class="login" else>
+        <div class="login" v-else>
           <el-popover placement="bottom" width="20" trigger="click">
             <div>昵称：{{ nickname }}</div>
             <div>我的等级：LV.{{ level }}</div>
@@ -69,7 +62,7 @@ import {
 
 export default {
   name: "navBar",
-  data() {
+  data () {
     return {
       search: "",
       isshow: true,
@@ -88,19 +81,19 @@ export default {
       },
     };
   },
-  created() {
+  created () {
     this.getSearch();
   },
   methods: {
     // 网络请求函数方法
-    getSearch() {
+    getSearch () {
       const keywords = this.search;
       getSearch(keywords).then((res) => {
         this.$store.state.musicLIst = res.result.songs;
       });
     },
     // 登录
-    logins() {
+    logins () {
       const phones = this.login.phoneNumbar;
       const passwords = this.login.password;
       // 获取手机登录
@@ -111,31 +104,31 @@ export default {
       });
     },
     // 账号信息
-    getAccount() {
+    getAccount () {
       getAccount().then((res) => {
         this.nickname = res.profile.nickname;
         this.avatarUrl = res.profile.avatarUrl;
       });
     },
     // 用户等级
-    getUsresLevel() {
+    getUsresLevel () {
       getUsresLevel().then((res) => {
         this.level = res.data.level;
       });
     },
     // 用户歌单
-    getUserPlayList(uid) {
+    getUserPlayList (uid) {
       setTimeout(() => {
         getUserPlayList(uid).then((res) => {
           this.$store.state.userplaylist = res.playlist;
         });
       }, 500);
     },
-    errorHandler() {
+    errorHandler () {
       return false;
     },
     // 登录完成时执行函数
-    onLogin(formName) {
+    onLogin (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           this.logins();
@@ -148,16 +141,16 @@ export default {
       });
     },
     // 重置表单
-    resetForm(formName) {
+    resetForm (formName) {
       this.$refs[formName].resetFields();
     },
-    musesClick() {
+    musesClick () {
       this.$router.push("/musices");
     },
-    indexClick() {
+    indexClick () {
       this.$router.push("/found");
     },
-    handleCommand(command) {
+    handleCommand (command) {
       this.$message("click on item " + command);
     },
   },

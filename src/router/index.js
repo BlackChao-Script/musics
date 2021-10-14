@@ -8,7 +8,6 @@ const playlist = () => import("@/views/found/playlist/playlist");
 const radio = () => import("@/views/found/radio/radio");
 const singer = () => import("@/views/found/singer/singer");
 const newmusics = () => import("@/views/found/newmusics/newmusics");
-
 const videos = () => import("@/views/video/videos");
 const songlistdetail = () => import("@/views/songlistdetail/songlistdetail");
 const musices = () => import("@/views/musics/musices");
